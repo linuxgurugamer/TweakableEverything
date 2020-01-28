@@ -55,8 +55,8 @@ namespace TweakableEverything
 #endif
 
 		// Stores our tweaked value for control reversal.
-		[KSPField(isPersistant = true, guiName = "Control", guiActiveEditor = true, guiActive = true)]
-		[UI_Toggle(enabledText = "Reversed", disabledText = "Normal")]
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_Gimbals_Control", guiActiveEditor = true, guiActive = true)]//Control
+		[UI_Toggle(enabledText = "#TweakableEverything_Gimbals_Reversed", disabledText = "#TweakableEverything_Gimbals_Normal")]//ReversedNormal
 		public bool reverseGimbalControl;
 		// Stores the previous state of reverseGimbalControl.
 		protected bool reverseControlState;

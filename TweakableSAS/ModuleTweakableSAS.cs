@@ -47,7 +47,7 @@ namespace TweakableEverything
 		private static bool researchedPartsLoaded = false;
 
 		#region Fields
-		[KSPField(isPersistant = true, guiName = "SAS Autopilot", guiFormat = "Level #0", guiActiveEditor = true)]
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_SAS_Autopilot", guiFormat = "Level #0", guiActiveEditor = true)]//SAS Autopilot
 		[UI_FloatRange(maxValue = 3, minValue = 0, stepIncrement = 1)]
 		public float SASServiceLevel;
 

@@ -30,6 +30,7 @@ using KSP;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using KSP.Localization;
 #if DEBUG
 using ToadicusTools.DebugTools;
 #endif
@@ -107,26 +108,11 @@ namespace TweakableFuelPumps
 
 					string pluralChar = this.resources.Count > 1 ? "s" : string.Empty;
 
-					this.Actions["EnableFuelPumpAction"].guiName = string.Format(
-						"{0} {1} Pump{2}",
-						"Enable",
-						joinedResources.ToString(),
-						pluralChar
-					);
+					this.Actions["EnableFuelPumpAction"].guiName = Localizer.Format("#TweakableEverything_FuelPump_EnableFuelPump", joinedResources.ToString(), pluralChar);//string.Format("Enable {0} Pump{1}",,,)
 
-					this.Actions["DisableFuelPumpAction"].guiName = string.Format(
-						"{0} {1} Pump{2}",
-						"Disable",
-						joinedResources.ToString(),
-						pluralChar
-					);
+					this.Actions["DisableFuelPumpAction"].guiName = Localizer.Format("#TweakableEverything_FuelPump_DisableFuelPump", joinedResources.ToString(), pluralChar);//string.Format("Disable {0} Pump{1}",,)
 
-					this.Actions["ToggleFuelPumpAction"].guiName = string.Format(
-						"{0} {1} Pump{2}",
-						"Toggle",
-						joinedResources.ToString(),
-						pluralChar
-					);
+					this.Actions["ToggleFuelPumpAction"].guiName = Localizer.Format("#TweakableEverything_FuelPump_ToggleFuelPump", joinedResources.ToString(), pluralChar);//string.Format("Toggle {0} Pump{1}", "", , )
 				}
 			}
 			else
