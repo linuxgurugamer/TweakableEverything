@@ -30,17 +30,16 @@
 // used under a Creative Commons Attribution-ShareAlike 3.0 Unported License.
 //
 
-@PART[kerbalEVA*]:NEEDS[!EVAEnhancements&!SquadExpansion/Serenity]
+@PART[kerbalEVA*]:NEEDS[!EVAEnhancements]:NEEDS[!Serenity]
 {
 	MODULE
 	{
 		name = ModuleTweakableEVA
 	}
 }
-
-@PART[kerbalEVA*]:HAS[@MODULE[ModuleScienceExperiment]:HAS[#experimentID[ROCScience]]]:NEEDS[!EVAEnhancements&SquadExpansion/Serenity]
+@PART[kerbalEVA*]:NEEDS[!EVAEnhancements]:NEEDS[Serenity]
 {
-	MODULE
+	MODULE:NEEDS[MODULE[ModuleScienceExperiment, experimentID = ROCScience]]
 	{
 		name = ModuleTweakableEVA
 	}

@@ -55,3 +55,6 @@
 	Removed range from TweakableGimble since it's now in stock
 	Removed TweakableIntakes, since it's also in stock
 	Added InstallChecker to all dlls
+
+0.2.0.1
+	Fixed double throttles for TweakableEVA when Serenity/Breaking Ground was installed.  Thanks to @poodmund for helping with the MM patch
