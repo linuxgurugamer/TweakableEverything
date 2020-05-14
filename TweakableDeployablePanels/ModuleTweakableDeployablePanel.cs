@@ -52,8 +52,8 @@ namespace TweakableEverything
 
 		// Tweakable property to determine whether the solar panel should track the sun or not.
 		// Tweakable in flight.
-		[KSPField(guiName = "Sun Tracking", isPersistant = true, guiActiveEditor = true, guiActive = true)]
-		[UI_Toggle(disabledText = "Disabled", enabledText = "Enabled")]
+		[KSPField(guiName = "#TweakableEverything_DeployablePanel_SunTracking", isPersistant = true, guiActiveEditor = true, guiActive = true)]//Sun Tracking
+		[UI_Toggle(disabledText = "#TweakableEverything_DeployablePanel_Disabled", enabledText = "#TweakableEverything_DeployablePanel_Enabled")]//Disabled""Enabled
 		public bool sunTrackingEnabled;
 		// Save the state here so we can tell if sunTrackingEnabled has changed.
 		protected bool sunTrackingState;

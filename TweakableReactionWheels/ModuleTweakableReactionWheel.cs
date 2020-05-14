@@ -46,25 +46,25 @@ namespace TweakableEverything
 		protected ModuleReactionWheel reactionWheelModule;
 
 		// Stores our tweaked value for roll torque.
-		[KSPField(isPersistant = true, guiName = "Roll Torque", guiUnits = "kN-m", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_ReactionWheel_RollTorque", guiUnits = "kN-m", guiFormat = "F2",//Roll Torque
 			guiActiveEditor = true)]
 		[UI_FloatRange(scene = UI_Scene.Editor, stepIncrement = 1f)]
 		public float RollTorque;
 
 		// Stores our tweaked value for pitch torque.
-		[KSPField(isPersistant = true, guiName = "Pitch Torque", guiUnits = "kN-m", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_ReactionWheel_PitchTorque", guiUnits = "kN-m", guiFormat = "F2",//Pitch Torque
 			guiActiveEditor = true)]
 		[UI_FloatRange(scene = UI_Scene.Editor, stepIncrement = 1f)]
 		public float PitchTorque;
 
 		// Stores our tweaked value for yaw torque.
-		[KSPField(isPersistant = true, guiName = "Yaw Torque", guiUnits = "kN-m", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_ReactionWheel_YawTorque", guiUnits = "kN-m", guiFormat = "F2",//Yaw Torque
 			guiActiveEditor = true)]
 		[UI_FloatRange(scene = UI_Scene.Editor, stepIncrement = 1f)]
 		public float YawTorque;
 
 		// Stores our value for all-axis torque gain
-		[KSPField(isPersistant = true, guiName = "Torque Limiter", guiFormat = "P0",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_ReactionWheel_TorqueLimiter", guiFormat = "P0",//Torque Limiter
 			guiActive = true, guiActiveEditor = false)]
 		[UI_FloatRange(minValue = 0f, maxValue = 1f, stepIncrement = .02f)]
 		public float TorqueGain;

@@ -32,6 +32,7 @@ using System.Collections.Generic;
 using ToadicusTools.Extensions;
 using UnityEngine;
 using ToadicusTools.TweakableTools;
+using KSP.Localization;
 
 namespace TweakableEverything
 {
@@ -89,7 +90,7 @@ namespace TweakableEverything
 		/// </summary>
 		[KSPField(
 			isPersistant = false,
-			guiName = "Max Capture Roll Angle",
+			guiName = "#TweakableEverything_DockingNode_MaxCaptureRollAngle",//Max Capture Roll Angle
 			guiUnits = "°", guiFormat = "F0",
 			guiActive = true, guiActiveEditor = true
 		)]
@@ -106,7 +107,7 @@ namespace TweakableEverything
 		/// </summary>
 		[KSPField(
 			isPersistant = false,
-			guiName = "Max Acquire Roll Angle",
+			guiName = "#TweakableEverything_DockingNode_MaxAcquireRollAngle",//Max Acquire Roll Angle
 			guiUnits = "°", guiFormat = "F0",
 			guiActive = true, guiActiveEditor = true
 		)]
@@ -121,35 +122,35 @@ namespace TweakableEverything
         /* @subclass
 		private bool yieldedDecouple;*/
 
-        [KSPField(isPersistant = true, guiName = "Unfocused Range", guiUnits = "m", guiFormat = "F2",
+        [KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_UnfocusedRange", guiUnits = "m", guiFormat = "F2",//Unfocused Range
         guiActiveEditor = true, guiActive = false)]
         [UI_FloatRange(minValue = 200f, maxValue = 1000, stepIncrement = 1f)]
         public float unfocusedRange;
 
 
-        [KSPField(isPersistant = true, guiName = "new Acquire Range", guiUnits = "m", guiFormat = "F2",
+        [KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_NewAcquireRange", guiUnits = "m", guiFormat = "F2",//new Acquire Range
 			guiActiveEditor = true, guiActive = false)]
 //        [UI_FloatRange(minValue = -1f, maxValue = float.MaxValue, stepIncrement = 1f)]
         [UI_FloatRange(minValue = 0.2f, maxValue = 1f, stepIncrement = .1f)]
 
         public float acquireRange;
 
-		[KSPField(isPersistant = true, guiName = "Acquire Force", guiUnits = "kN", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_AcquireForce", guiUnits = "kN", guiFormat = "F2",//Acquire Force
 			guiActiveEditor = true, guiActive = false)]
 		[UI_FloatRange(minValue = -1f, maxValue = float.MaxValue, stepIncrement = 1f)]
 		public float acquireForce;
 
-		[KSPField(isPersistant = true, guiName = "Acquire Torque", guiUnits = "kN-m", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_AcquireTorque", guiUnits = "kN-m", guiFormat = "F2",//Acquire Torque
 			guiActiveEditor = true, guiActive = false)]
 		[UI_FloatRange(minValue = -1f, maxValue = float.MaxValue, stepIncrement = 1f)]
 		public float acquireTorque;
 
-		[KSPField(isPersistant = true, guiName = "Ejection Force", guiUnits = "kN", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_EjectionForce", guiUnits = "kN", guiFormat = "F2",//Ejection Force
 			guiActiveEditor = true, guiActive = false)]
 		[UI_FloatRange(minValue = -1f, maxValue = float.MaxValue, stepIncrement = 1f)]
 		public float undockEjectionForce;
 
-		[KSPField(isPersistant = true, guiName = "Re-engage Distance", guiUnits = "m", guiFormat = "F2",
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_DockingNode_ReengageDistance", guiUnits = "m", guiFormat = "F2",//Re-engage Distance
 			guiActiveEditor = true, guiActive = false)]
 		[UI_FloatRange(minValue = -1f, maxValue = float.MaxValue, stepIncrement = 1f)]
 		public float minDistanceToReEngage;
@@ -433,7 +434,7 @@ namespace TweakableEverything
                 // ...and if we have a deploy animation module and are ready...
                 if (
 					this.deployAnimation != null &&
-					this.dockingNodeModule.state == "Ready"
+					this.dockingNodeModule.state == Localizer.Format("#TweakableEverything_DockingNode_ReadyState")//"Ready"
 				)
 				{
 					// ...and if we have an attached part...

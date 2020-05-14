@@ -31,6 +31,7 @@ using System;
 using System.Collections.Generic;
 using ToadicusTools.Extensions;
 using UnityEngine;
+using KSP.Localization;
 #if DEBUG
 using ToadicusTools.DebugTools;
 #endif
@@ -51,11 +52,11 @@ namespace TweakableEverything
 		protected float lastDeployFactor;
 		protected float lastSemiDeployFactor;
 
-		[KSPField(isPersistant = true, guiName = "Deploy Factor", guiFormat = "×##0", guiActiveEditor = true)]
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_Parachutes_DeployFactor", guiFormat = "×##0", guiActiveEditor = true)]//Deploy Factor
 		[UI_FloatRange(minValue = 1f, maxValue = 20f, stepIncrement = 1f)]
 		public float deploymentFactor;
 
-		[KSPField(isPersistant = true, guiName = "Semi-Deploy Factor", guiFormat = "×##0", guiActiveEditor = true)]
+		[KSPField(isPersistant = true, guiName = "#TweakableEverything_Parachutes_SemiDeployFactor", guiFormat = "×##0", guiActiveEditor = true)]//Semi-Deploy Factor
 		[UI_FloatRange(minValue = 1f, maxValue = 20f, stepIncrement = 1f)]
 		public float semiDeploymentFactor;
 
@@ -85,11 +86,11 @@ namespace TweakableEverything
 			this.prefabSemiDeploySpeed = prefabChuteModule.semiDeploymentSpeed;
 
 			this.chuteModule.Fields["deploymentSpeed"].guiActiveEditor = true;
-			this.chuteModule.Fields["deploymentSpeed"].guiName = "Deploy Spd";
+			this.chuteModule.Fields["deploymentSpeed"].guiName = Localizer.Format("#TweakableEverything_Parachutes_DeploySpeed");//"Deploy Spd"
 			this.chuteModule.Fields["deploymentSpeed"].guiFormat = "G3";
 
 			this.chuteModule.Fields["semiDeploymentSpeed"].guiActiveEditor = true;
-			this.chuteModule.Fields["semiDeploymentSpeed"].guiName = "Semi-Deploy Spd";
+			this.chuteModule.Fields["semiDeploymentSpeed"].guiName = Localizer.Format("#TweakableEverything_Parachutes_SemiDeploySpeed");//"Semi-Deploy Spd"
 			this.chuteModule.Fields["semiDeploymentSpeed"].guiFormat = "G3";
 
 			var deployField = this.Fields["deploymentFactor"].uiControlCurrent() as UI_FloatRange;
